@@ -1,5 +1,8 @@
 # Note Taking Application
 
+## Prerequisites
+- Node (>= 8.9.0)
+- Docker (Optional)
 ## Installation and running the app for Docker
 
 ```bash
@@ -7,8 +10,7 @@ $ npm run init
 ```
 
 ## Running the app for local environment
-<i>required: Node.js version 8++</i>
-Please change MongoDB contention URI in [app.module.ts](./src/app.module.ts) to localhost:27017 for localhost
+Please change MongoDB contention URI in `./src/app.module.ts` to localhost:27017 for localhost
 ```js
 @Module({
   imports: [
@@ -30,6 +32,8 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+Visit your Postman in: `http://localhost:8000/`
 ## License
 
 [MIT licensed](LICENSE)
