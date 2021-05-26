@@ -8,14 +8,14 @@ services:
     ports:
       - "8000:3000"
     environment:
-      - DB_URL=mongodb://db_mongo
+      - DB_URL=mongodb://note_tacking_db
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
       
   db:
     image: mongo
-    container_name: db_mongo
+    container_name: note_tacking_db
     volumes:
       - mongodata:/data/db
     ports:
