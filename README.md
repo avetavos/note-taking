@@ -33,7 +33,19 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-Visit your Postman in: `http://localhost:8000/`
+## How to work
+
+Visit your Postman in: `http://localhost:8000/notes`
+
+- `GET /notes` for get all note your can sent querystring to sort
+  - sortBy : `title` or `createdAt`
+  - orderBy : `asc` of `desc` (default `asc`)
+  - tags : input `tag name` when you want to search by tag
+- `GET /notes/:noteId` for get note by id
+- `POST /notes` for create new note
+- `PUT /notes/:noteId` for update note by id
+- `POST /notes/:noteId` for delete note by id
+
 ## License
 
 [MIT licensed](LICENSE)
