@@ -9,9 +9,19 @@ import { CreateNoteDTO } from './dto/note.dto';
 export class NoteService {
   constructor(@InjectModel('Note') private readonly noteModel: Model<Note>) {}
 
-  async getNotes(): Promise<Note[]> {
-    const notes = await this.noteModel.find();
-    return notes;
+  async getNotes(
+    sortBy: string,
+    orderBy: string,
+    tags?: string,
+  ): Promise<Note[]> {
+    if (!tags) {
+      const notes = await this.noteModel.find().sort({ [sortBy]: orderBy });
+      return notes;
+    }
+    const notesByTags = await this.noteModel
+      .find({ tags })
+      .sort({ [sortBy]: orderBy });
+    return notesByTags;
   }
 
   async getNote(noteId: string): Promise<Note> {
